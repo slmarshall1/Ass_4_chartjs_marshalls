@@ -1,8 +1,10 @@
+//create function and variable for the chartContainer(canvas) this is where the chart will display on the webpage
+
 window.onload = function () {
     var chart = new CanvasJS.Chart("chartContainer",
     {      
         title:{
-            text: "Annual Sales"
+            text: "Annual Sales"//chart title
         },
 //
 axisX:{      
@@ -12,9 +14,9 @@ axisX:{
             labelAngle: -50
         },
         axisY: {
-          valueFormatString: "#,###"   //"#,###"//setting the format of the y axis 
+          valueFormatString: "#,###"   //"#,###"//setting the format 
       },
-
+      //color and style for the amounts on the y axis, also where you display the currency symbol if needed my chart uses £
         toolTip: {
             shared: true,
             content: "<span style='\"'color: {color};'\"'><strong>{name}</strong></span> <span style='\"'color: dimgrey;'\"'>£{y}</span> "
@@ -26,12 +28,13 @@ axisX:{
 
         data: [
         {        
-            type: "splineArea", 
+            type: "splineArea", //the type of chart - this can be changed and the chart will reflect the changes and display different chart type
             showInLegend: true,
-            name: "Labour Sold",
-            color: "rgba(54,158,173,.6)",
+            name: "Labour Sold",//label
+            color: "rgba(54,158,173,.6)",//color
+            //datapoints the first month is January which is zero
             dataPoints: [
-            {x: new Date(2016, 0), y: 4070},//net figures
+            {x: new Date(2016, 0), y: 4070},//net figures for each month
             {x: new Date(2016, 1), y: 5804},
             {x: new Date(2016, 2), y: 4183},
             {x: new Date(2016, 3), y: 4600},
@@ -49,10 +52,11 @@ axisX:{
         {        
             type: "splineArea", 
             showInLegend: true,
-            name: "Mot",        
-            color: "rgba(134,180,2,.7)",
+            name: "Mot",   //label     
+            color: "rgba(134,180,2,.7)",//color
+            //datapoints the first month is January which is zero
             dataPoints: [
-            {x: new Date(2016, 0), y: 4848},//net figures
+            {x: new Date(2016, 0), y: 4848},//net figures for each month
             {x: new Date(2016, 1), y: 3495},
             {x: new Date(2016, 2), y: 3755},
             {x: new Date(2016, 3), y: 3952},
@@ -70,10 +74,11 @@ axisX:{
         {        
             type: "splineArea", 
             showInLegend: true,
-            name: "Parts Sales",
-            color: "rgba(194,70,66,.6)",        
+            name: "Parts Sales",//label
+            color: "rgba(194,70,66,.6)",   //color 
+            //datapoints the first month is January which is zero    
             dataPoints: [
-            {x: new Date(2016, 0), y: 4372},//net figures
+            {x: new Date(2016, 0), y: 4372},//net figuresfor each month
             {x: new Date(2016, 1), y: 3304},
             {x: new Date(2016, 2), y: 2443},
             {x: new Date(2016, 3), y: 3456},
@@ -92,10 +97,11 @@ axisX:{
         {        
             type: "splineArea", 
             showInLegend: true,
-            color: "rgba(127,96,132,.6)",        
-            name: "Fixed Price",
+            color: "rgba(127,96,132,.6)",  //color  
+            //datapoints the first month is January which is zero    
+            name: "Fixed Price",//label
             dataPoints: [
-            {x: new Date(2016, 0), y: 132},//net figures
+            {x: new Date(2016, 0), y: 132},//net figures for each month
             {x: new Date(2016, 1), y: 182},
             {x: new Date(2016, 2), y: 35},
             {x: new Date(2016, 3), y: 141},
@@ -114,5 +120,5 @@ axisX:{
         ]
     });
 
-chart.render();
+chart.render();//call the function to render the chart and display on the webpage
 }
